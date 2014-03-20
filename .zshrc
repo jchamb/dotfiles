@@ -31,6 +31,9 @@ plugins=(brew cap composer git osx sublime svn vagrant zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# include additional aliases
+source $HOME/.aliases
+
 # ZSH syntax highlighting
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

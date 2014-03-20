@@ -1,0 +1,81 @@
+# Easier Vagrant Database Commands
+alias vagrant:db:dump="vagrant ssh -c '~/dump.sh'"
+alias vagrant:db:load="vagrant ssh -c '~/load.sh'"
+
+# Shorter Git commands for common actions
+alias g="git"
+alias gs="git status"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gpd="git pull"
+alias gpu="git push"
+
+# FX Git actions
+alias fx:ga="git add --all ."
+alias fx:gs="git status"
+alias fx:gc="git commit -a"
+
+alias fx:gpd="git push origin dev"
+alias fx:gps="git push origin staging"
+alias fx:gpm="git push origin master"
+
+alias fx:gpld="git pull origin dev"
+alias fx:gpls="git pull origin staging"
+alias fx:gplm="git pull origin master"
+
+alias fx:gcod="git checkout dev"
+alias fx:gcos="git checkout staging"
+alias fx:gcom="git checkout master"
+
+alias fx:gmd="git merge --no-ff dev"
+alias fx:gms="git merge --no-ff staging"
+alias fx:gmm="git merge --no-ff master"
+
+# Even Shorter commands for Git :)
+alias fx:gacpd="fx:ga && fx:gc && fx:gpld && fx:gpd"
+alias fx:gacps="fx:ga && fx:gc && fx:gpls && fx:gps"
+alias fx:gacpm="fx:ga && fx:gc && fx:gplm && fx:gpm"
+
+alias fx:gmds="fx:gcos && fx:gpls && fx:gmd && fx:gps && fx:gcod"
+alias fx:gmdm="fx:gcom && fx:gplm && fx:gmd && fx:gpm && fx:gcod"
+alias fx:gmsm="fx:gcom && fx:gplm && fx:gms && fx:gpm && fx:gcod"
+alias fx:gmsd="fx:gcod && fx:gpld && fx:gms && fx:gpd"
+
+# Database commands for server
+alias fx:db:staging:dump="cd database/migration_scripts && ./dump_staging.sh && cd ../.."
+alias fx:db:staging:swap="cp -rvf database/project-staging.sql database/project.sql"
+
+alias fx:db:live:dump="cd database/migration_scripts && ./dump_live.sh && cd ../.."
+alias fx:db:live:swap="cp -rvf database/project-live.sql database/project.sql"
+
+# The ultimate commands...
+alias fx:start="vagrant up && fx:gcod && fx:gpld"
+alias fx:save="fx:gacpd"
+alias fx:load="fx:gpld"
+alias fx:db:save="vagrant:db:dump"
+alias fx:db:load="vagrant:db:load"
+alias fx:db:live:load="fx:db:live:dump && fx:db:live:swap && fx:db:load"
+alias fx:db:staging:load="fx:db:staging:dump && fx:db:staging:swap && fx:db:load"
+alias fx:stop="fx:db:save && vagrant halt && fx:save"
+alias fx:stage="fx:gmds && cap staging deploy"
+alias fx:golive="fx:gmdm && cap production deploy"
+
+alias fx:help="echo \"
+FX Development Commands:
+------------------------
+fx:help (or fx:?)  - Show this output
+
+fx:start           - Start development: pull latest code and bring up VM
+fx:save            - Save work: commit and push your changes
+fx:load            - Load work: pull latest changes from server (done by save and start)
+fx:stop            - Stop development: save your work and shut down VM
+
+fx:stage           - Stage changes: merge work to staging branch and deploy
+fx:golive          - Make changes live: merge work to master branch and deploy
+
+fx:db:save         - Save database: save the database to project.sql
+fx:db:load         - Load database: load the database from project.sql
+fx:db:staging:load - Download and load database from staging site (overwrites project.sql)
+fx:db:live:load    - Download and load database from live site (overwrites project.sql)
+\""
+
