@@ -10,6 +10,14 @@ alias gcm="git commit -m"
 alias gpd="git pull"
 alias gpu="git push"
 
+# Shorter Deploy Commands
+alias ds="fx:gmds && cap staging deploy"
+alias deploy s="fx:gmds && cap staging deploy"
+alias deploy staging="fx:gmds && cap staging deploy"
+alias dl="fx:gmdm && cap production deploy"
+alias deploy l="fx:gmdm && cap production deploy"
+alias deploy live="fx:gmdm && cap production deploy"
+
 # FX Git actions
 alias fx:ga="git add --all ."
 alias fx:gs="git status"
