@@ -1,1 +1,27 @@
-/Users/Jake/.aliases
+alias wpscan="ruby ~/sites/wpscan/wpscan.rb"
+
+# DNS Helpers
+alias dns:cache:clear="sudo killall -HUP mDNSResponder"
+
+# Easier Vagrant Database Commands
+alias vagrant:db:dump="vagrant ssh -c '~/dump.sh'"
+alias vagrant:db:load="vagrant ssh -c '~/load.sh'"
+
+# Shorter Git commands for common actions
+alias g="git"
+alias ga="git add --all ."
+alias gs="git status"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gpd="git pull"
+alias gpu="git push"
+alias gr="git reset HEAD"
+
+# SSH 
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias sshconfig="vim ~/.ssh/config"
+
+# git repos
+alias devenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-dev-environment.git master | tar -xf -"
+alias wpcat="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-plugin-wp-cat.git master | tar -xf -"
+alias wpenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-wordpress.git master | tar -xf -"
