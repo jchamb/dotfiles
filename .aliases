@@ -4,6 +4,7 @@ alias wpscan="ruby ~/sites/wpscan/wpscan.rb"
 alias dns:cache:clear="sudo killall -HUP mDNSResponder"
 
 # Easier Vagrant Database Commands
+alias v="vagrant"
 alias vagrant:db:dump="vagrant ssh -c '~/dump.sh'"
 alias vagrant:db:load="vagrant ssh -c '~/load.sh'"
 
