@@ -1,6 +1,6 @@
 [user]
 	name = Jake Chamberlain
-	email = jake@jchamb.com
+	email = jake@webpagefx.com
 [alias]
 	s = status
 	c = commit
@@ -43,3 +43,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain

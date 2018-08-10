@@ -1,3 +1,6 @@
+alias mcfx="cd /Volumes/ExternalHD/sites/marketingcloudfx.com"
+alias ops="cd /Volumes/ExternalHD/sites/operationsfx.com"
+
 alias wpscan="ruby ~/sites/wpscan/wpscan.rb"
 
 # DNS Helpers
@@ -8,6 +11,10 @@ alias v="vagrant"
 alias vagrant:db:dump="vagrant ssh -c '~/dump.sh'"
 alias vagrant:db:load="vagrant ssh -c '~/load.sh'"
 
+# Docker short commands
+alias dc="docker-compose"
+dce(){ docker exec -it "$1" /bin/bash; } 
+
 # Shorter Git commands for common actions
 alias g="git"
 alias ga="git add --all ."
@@ -17,7 +24,10 @@ alias gcm="git commit -m"
 alias gpd="git pull"
 alias gpu="git push"
 alias gr="git reset HEAD"
+alias gco="git checkout"
+alias gcob="git checkout -b"
 
+alias fixCodesign="cd ~/Library/Developer/Xcode/DerivedData && xattr -rc ."
 # SSH 
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias sshconfig="vim ~/.ssh/config"
@@ -26,3 +36,6 @@ alias sshconfig="vim ~/.ssh/config"
 alias devenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-dev-environment.git master | tar -xf -"
 alias wpcat="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-plugin-wp-cat.git master | tar -xf -"
 alias wpenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-wordpress.git master | tar -xf -"
+
+alias sites="cd /Volumes/External\ HD/sites"
+alias scrape="wget -rkpN -e robots=off --adjust-extension"
