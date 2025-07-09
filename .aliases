@@ -1,18 +1,18 @@
-alias mcfx="cd /Volumes/ExternalHD/sites/marketingcloudfx.com"
-alias ops="cd /Volumes/ExternalHD/sites/operationsfx.com"
+# MCFX DB Proxy
 
+alias k="kubectl"
+
+alias mcfx="cd ~/sites/mcfx"
+alias ops="cd ~/sites/opfx"
+alias redisup="redis-server /usr/local/etc/redis.conf"
 alias wpscan="ruby ~/sites/wpscan/wpscan.rb"
 
 # DNS Helpers
 alias dns:cache:clear="sudo killall -HUP mDNSResponder"
 
-# Easier Vagrant Database Commands
-alias v="vagrant"
-alias vagrant:db:dump="vagrant ssh -c '~/dump.sh'"
-alias vagrant:db:load="vagrant ssh -c '~/load.sh'"
-
 # Docker short commands
 alias dc="docker-compose"
+alias dcb="docker-compose up -d --force-recreate --build"
 dce(){ docker exec -it "$1" /bin/bash; } 
 
 # Shorter Git commands for common actions
@@ -26,16 +26,14 @@ alias gpu="git push"
 alias gr="git reset HEAD"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-
+alias gmb="git branch -r | xargs -L1 git --no-pager show -s --oneline --author=\"$(git config user.name)\""
 alias fixCodesign="cd ~/Library/Developer/Xcode/DerivedData && xattr -rc ."
+alias god="echo \"can't help you here, but I can pull\" && git pull"
+alias gsu="git submodule update --recursive --remote"
+
 # SSH 
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias sshconfig="vim ~/.ssh/config"
-
-# git repos
-alias devenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-dev-environment.git master | tar -xf -"
-alias wpcat="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-plugin-wp-cat.git master | tar -xf -"
-alias wpenv="git archive --format=tar --remote=git@wpfx.git.beanstalkapp.com:/wpfx/webpagefx-template-wordpress.git master | tar -xf -"
 
 alias sites="cd /Volumes/External\ HD/sites"
 alias scrape="wget -rkpN -e robots=off --adjust-extension"

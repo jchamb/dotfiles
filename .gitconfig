@@ -1,6 +1,6 @@
 [user]
 	name = Jake Chamberlain
-	email = jake@webpagefx.com
+	email = jake@jchamb.com
 [alias]
 	s = status
 	c = commit
@@ -24,10 +24,12 @@
 	keepBackup = false
 [core]
 	excludesfile = /Users/Jake/.gitignore
+	editor = code --wait
 [push]
-	default = matching
+	default = current
 [pull]
     default = matching
+	rebase = true
 [github]
 	user = jchamb
 [color]
@@ -45,3 +47,5 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[rebase]
+	autoStash = true
