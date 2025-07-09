@@ -23,7 +23,7 @@
 [mergetool]
 	keepBackup = false
 [core]
-	excludesfile = /Users/Jake/.gitignore
+	excludesfile = /Users/jake/.gitignore
 	editor = code --wait
 [push]
 	default = current

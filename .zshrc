@@ -2,21 +2,13 @@
 #export PATH=/opt/homebrew/bin:$HOME/bin:/usr/local/bin:/usr/local/opt/mysql-client/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-#export ZSH="/Users/jake/.oh-my-zsh"
+export ZSH="/Users/jake/.oh-my-zsh"
 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="avit"
-
-PROMPT='
- 
-$reset_color→ '
-
-function get_pwd() {
-  echo "${PWD/$HOME/~}"
-}
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -106,7 +98,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source /Users/jake/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /Users/jake/.aliases
 
 if command -v pyenv 1>/dev/null 2>&1; then
