@@ -1,9 +1,6 @@
-# MCFX DB Proxy
 
 alias k="kubectl"
 
-alias mcfx="cd ~/sites/mcfx"
-alias ops="cd ~/sites/opfx"
 alias redisup="redis-server /usr/local/etc/redis.conf"
 alias wpscan="ruby ~/sites/wpscan/wpscan.rb"
 
@@ -35,5 +32,5 @@ alias gsu="git submodule update --recursive --remote"
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias sshconfig="vim ~/.ssh/config"
 
-alias sites="cd /Volumes/External\ HD/sites"
+alias sites="cd ~/Sites"
 alias scrape="wget -rkpN -e robots=off --adjust-extension"
